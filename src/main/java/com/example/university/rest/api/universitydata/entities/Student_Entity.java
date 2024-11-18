@@ -14,4 +14,9 @@ public class Student_Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long studentId;
+
+    @Column(nullable = false)
+    private String studentName;
+
+    private 
 }
