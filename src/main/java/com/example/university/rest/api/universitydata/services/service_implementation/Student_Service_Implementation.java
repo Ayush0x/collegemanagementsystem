@@ -10,6 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -32,6 +35,14 @@ public class Student_Service_Implementation implements Student_Service {
 
     @Override
     public Studentdto createNewStudent(Studentdto studentdto) {
-
+        Optional<Student_Entity> existingStudent=studentRepository.findById(studentdto.getStudentId());
+        if(!existingStudent.isEmpty())
+        {
+            log.error("Student already exists");
+            throw new RuntimeException("Student already exists");
+        }
+        Student_Entity newStudent=modelMapper.map(studentdto, Student_Entity.class);
+        Student_Entity savedStudent=studentRepository.save(newStudent);
+        return modelMapper.map(savedStudent, Studentdto.class);
     }
 }
