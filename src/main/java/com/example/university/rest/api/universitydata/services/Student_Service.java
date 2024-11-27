@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service;
 public interface Student_Service {
     Studentdto getStudentById(Long id);
 
+    Studentdto createNewStudent(Studentdto studentdto);
 }

@@ -1,9 +1,10 @@
-package com.example.university.rest.api.universitydata.services;
+package com.example.university.rest.api.universitydata.services.service_implementation;
 
 import com.example.university.rest.api.universitydata.dto.Studentdto;
 import com.example.university.rest.api.universitydata.entities.Student_Entity;
 import com.example.university.rest.api.universitydata.exceptions.ResourceNotFoundException;
 import com.example.university.rest.api.universitydata.repositories.Student_Repository;
+import com.example.university.rest.api.universitydata.services.Student_Service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class Student_Service_Implementation implements Student_Service{
+public class Student_Service_Implementation implements Student_Service {
 
     private final Student_Repository studentRepository;
     private final ModelMapper modelMapper;
@@ -27,5 +28,10 @@ public class Student_Service_Implementation implements Student_Service{
                 });
             log.info("Student fetched with id: "+id);
         return modelMapper.map(student, Studentdto.class);
+    }
+
+    @Override
+    public Studentdto createNewStudent(Studentdto studentdto) {
+
     }
 }

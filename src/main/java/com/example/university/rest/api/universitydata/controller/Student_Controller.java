@@ -6,10 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -23,5 +20,11 @@ public class Student_Controller {
     {
         Studentdto studentdto=studentService.getStudentById(id);
         return ResponseEntity.ok(studentdto);
+    }
+
+    @PostMapping
+    public ResponseEntity<Studentdto> createNewStudent(@RequestBody Studentdto studentdto)
+    {
+        Studentdto createdStudent=studentService.createNewStudent(studentdto);
     }
 }
