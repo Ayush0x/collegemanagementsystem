@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Studentdto {
+public class AdmissionDto {
 
-    private Long studentId;
-    private String studentName;
 }

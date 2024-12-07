@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Professordto {
-
+public class SubjectDto {
 }

@@ -9,5 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Subjectdto {
+public class StudentDto {
+
+    private Long studentId;
+    private String studentName;
 }
