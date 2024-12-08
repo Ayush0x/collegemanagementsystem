@@ -3,7 +3,7 @@ package com.example.university.rest.api.universitydata.services.service_implemen
 import com.example.university.rest.api.universitydata.dto.StudentDto;
 import com.example.university.rest.api.universitydata.entities.StudentEntity;
 import com.example.university.rest.api.universitydata.exceptions.ResourceNotFoundException;
-import com.example.university.rest.api.universitydata.repositories.Student_Repository;
+import com.example.university.rest.api.universitydata.repositories.StudentRepository;
 import com.example.university.rest.api.universitydata.services.StudentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class StudentServiceImplementation implements StudentService {
 
-    private final Student_Repository studentRepository;
+    private final StudentRepository studentRepository;
     private final ModelMapper modelMapper;
 
     @Override

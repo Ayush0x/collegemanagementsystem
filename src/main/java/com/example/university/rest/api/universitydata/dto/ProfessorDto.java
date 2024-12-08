@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfessorDto {
-
+    private Long professorId;
+    private String professorName;
 }
